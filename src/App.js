@@ -1,7 +1,10 @@
+import Routes from './routes'
+import './styles/global.css'
+
 function App() {
   return (
     <div className="App">
-      <h1>mind eaters</h1>
+      <Routes />
     </div>
   );
 }
