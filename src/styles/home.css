@@ -11,13 +11,21 @@
   width: 70%;
   height: 90px;
   border-radius: 20px;
-  background: #bfc0c0;
+  border: 1px solid lightgray
+  /* background: #bfc0c0; */
 
   
   /* display: flex;
   justify-content: center;
   align-items: center; */
   /* margin: ; */
+}
+.imoveis-container {
+  margin-top: 80px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .imoveis-container ul li {

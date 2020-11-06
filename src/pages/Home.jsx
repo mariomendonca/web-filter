@@ -3,6 +3,7 @@ import React from 'react'
 import Header from '../components/Header'
 import data from '../data/data'
 import '../styles/home.css'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   console.log(data)
@@ -18,6 +19,7 @@ export default function Home() {
         <ul>
           {data.map(produto => (
             <li key={produto.id}>
+              {/* <Link to='/a'>  */}
               <strong>Cidade: </strong>
               <p>{produto.cidade}</p>
               <strong>Bairro:</strong>
@@ -28,6 +30,7 @@ export default function Home() {
               <p>{produto.preco}</p>
               <strong>Quartos: </strong>
               <p>{produto.quartos}</p>
+              {/* </Link> */}
             </li>
           ))}
         </ul>
