@@ -19,7 +19,7 @@ export default function Home() {
         <ul>
           {data.map(produto => (
             <li key={produto.id}>
-              <Link to='/a'> 
+              <Link to='/'> 
               <strong>Cidade: </strong>
               <p>{produto.cidade}</p>
               <strong>Bairro:</strong>
