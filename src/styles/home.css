@@ -26,14 +26,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  width: 100%;
+}
+
+.imoveis-container ul {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .imoveis-container ul li {
-  /* width: 300px;
-  height: 400px; */
-  /* padding: 24px; */
+
   border: 1px solid lightgray;
   border-radius: 8px;
-  /* background: #bfc0c0 ; */
   position: relative;
+
+  margin: 20px 0;
+  padding: 10px;
+  width: 250px;
 }
