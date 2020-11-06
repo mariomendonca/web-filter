@@ -39,12 +39,22 @@
 }
 
 .imoveis-container ul li {
-
+  
   border: 1px solid lightgray;
   border-radius: 8px;
   position: relative;
-
+  
   margin: 20px 0;
   padding: 10px;
   width: 250px;
+
+  transition: all .3s;
+}
+          
+.imoveis-container ul li:hover {
+  -webkit-box-shadow: -1px 3px 22px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 3px 22px -12px rgba(0,0,0,0.75);
+  box-shadow: -1px 3px 22px -12px rgba(0,0,0,0.75);
+
+  transform: scale(1.05);
 }
