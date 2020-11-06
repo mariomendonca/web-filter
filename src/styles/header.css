@@ -7,7 +7,7 @@
 .header label.logo {
   color: #ffffff;
   font-size: 35px;
-  line-height: 80px;
+  line-height: 90px;
   padding: 0 100px;
   font-weight: bold;
 }
@@ -19,7 +19,7 @@
 
 .header ul li {
   display: inline-block;
-  line-height: 80px;
+  line-height: 90px;
   margin: 0 40px;
 }
 
