@@ -12,8 +12,6 @@ label.logo {
   font-weight: bold;
 }
 
-
-
 ul {
   float: right;
   margin-right: 150px;
@@ -49,7 +47,7 @@ ul li a:hover {
   display: none;
 }
 
-@media (max-width: 952px) {
+@media (max-width: 1050px) {
   label.logo {
     font-size: 30px;
     padding-left: 70px;
@@ -73,7 +71,7 @@ ul li a:hover {
     height: 170px;
     background: #BFC0C0;
     top: 90px;
-    left: 0;
+    left: -100%;
     text-align: center;
     transition: all .5s;
   }
@@ -91,6 +89,6 @@ ul li a:hover {
   }
 
   #check:checked ~ ul {
-    left: -100%;
+    left: 0;
   }
 }

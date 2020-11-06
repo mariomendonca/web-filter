@@ -11,8 +11,8 @@ export default function Header() {
       </label>
       <label className='logo'>Odimar imóveis</label>
       <ul>
-        <li><a href='#'>Contato</a></li>
-        <li><a href='#'>Sobre mim</a></li>
+        <li><a href='/'>Contato</a></li>
+        <li><a href='/'>Sobre mim</a></li>
       </ul>
     </div>
   )
