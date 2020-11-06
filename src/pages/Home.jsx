@@ -12,7 +12,7 @@ export default function Home() {
     <Header />
     <div className='container'>
       <div className='filter-container'>
-
+        <h1>testing</h1>
         <label>Cidade: </label>
         <select>
           <option>Recife</option>
@@ -24,7 +24,7 @@ export default function Home() {
           <option>Aflitos</option>
           <option>Espinheiro</option>
         </select>
-        
+
         <label>Tamanho (m²): </label>
         <select>
           <option>70m2- 120m2</option>
