@@ -2,10 +2,10 @@ const data = [
   {
     id: 1,
     cidade: 'Recife',
-    bairro: 'Aflitos',
+    bairro: 'Espinhero',
     tamanho: 100,
     quartos: 2,
-    preco: 2000,
+    preco: 1000,
   },
   {
       id: 2,
@@ -13,12 +13,12 @@ const data = [
     bairro: 'Aflitos',
     tamanho: 100,
     quartos: 2,
-    preco: 2000,
+    preco: 1500,
   },
   {
     id: 3,
     cidade: 'Recife',
-    bairro: 'Aflitos',
+    bairro: 'Espinhero',
     tamanho: 100,
     quartos: 2,
     preco: 2000,
@@ -34,7 +34,7 @@ const data = [
   {
     id: 5,
     cidade: 'Rio de Janeiro',
-    bairro: 'Aflitos',
+    bairro: 'Espinhero',
     tamanho: 100,
     quartos: 2,
     preco: 2000,
@@ -45,7 +45,7 @@ const data = [
     bairro: 'Aflitos',
     tamanho: 100,
     quartos: 2,
-    preco: 2000,
+    preco: 1000,
   },  
 ]
 

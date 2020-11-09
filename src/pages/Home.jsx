@@ -13,7 +13,7 @@ export default function Home() {
   const [bedrooms, setBedrooms] = useState('')
 
   // const [filtered, setFiltered] = useState('')
-
+  
 
   function handleSearch(e) {
     e.preventDefault()
@@ -27,13 +27,8 @@ export default function Home() {
     }
 
     console.log(filteredItems)
-    // const test = data.filter(produto => produto.cidade === 'Recife')
-    // setFiltered(test)
-    // console.log('hello')    
+    return filteredItems
   }
-  // const test = data.filter(produto => produto.cidade === 'Recife')
-  // setFiltered(test)
-  // console.log(test)
 
   return (
     <>
@@ -67,7 +62,7 @@ export default function Home() {
             onChange={e => setSize(e.target.value)}          
           >
             <option value=''>Não especificado</option>
-            <option value='70'>70- 120</option>
+            <option value='100'>70- 120</option>
             <option value='120'>120 - 150</option>
             <option value='150'>150 - 200</option>
           </select>
@@ -101,10 +96,18 @@ export default function Home() {
           </button>
         </form>
       </div>
+
       <div className='imoveis-container'>
         <ul>
-          {data.map(produto => (
-            <Link to={`/${produto.id}`}> 
+          {data
+            .filter(produto => produto.cidade === city)
+            // .filter(produto => produto.cidade === city &&
+            //   produto.bairro === neighborhood && 
+            //   produto.preco === price && 
+            //   produto.quartos === bedrooms && 
+            //   produto.tamanho === size) 
+            .map(produto => (
+            <Link to={`/imovel/${produto.id}`}> 
               <li key={produto.id}>
                 <strong>Cidade: </strong>
                 <p>{produto.cidade}</p>
@@ -121,6 +124,7 @@ export default function Home() {
           ))}
         </ul>
       </div>
+
     </div>
     </>
   )
