@@ -12,7 +12,6 @@ export default function Home() {
     <Header />
     <div className='container'>
       <div className='filter-container'>
-        <h1>testing</h1>
         <label>Cidade: </label>
         <select>
           <option>Recife</option>

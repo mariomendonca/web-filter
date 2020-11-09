@@ -3,6 +3,7 @@ import '../styles/header.css'
 import {FiMenu} from 'react-icons/fi'
 
 export default function Header() {
+
   return (
     <div className='header'>
       <input type='checkbox' id='check'/>
