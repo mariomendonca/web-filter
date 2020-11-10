@@ -12,6 +12,7 @@ export default function Home() {
   const [size, setSize] = useState('')
   const [price, setPrice] = useState('')
   const [bedrooms, setBedrooms] = useState('')
+  const [filteredData, setFilteredData] = useState([...data])
 
   // const [filtered, setFiltered] = useState('')
   
@@ -36,6 +37,7 @@ export default function Home() {
     <Header />
     <div className='container'>
       <div className='filter-container'>
+        {/* <form onSubmit={console.log(filteredData)}> */}
         <form onSubmit={handleSearch}>
           <div>
             <label>Cidade: </label>
@@ -103,7 +105,7 @@ export default function Home() {
           </div>
 
           <div>
-            <button type='submit'>
+            <button type='submit'onClick={console.log(filteredData)}>
               Pesquisar <FiSearch  />
             </button>
           </div>
@@ -112,7 +114,7 @@ export default function Home() {
 
       <div className='imoveis-container'>
         <ul>
-          {data
+          {filteredData
             .filter(produto => produto.cidade === city)
             // .filter(produto => produto.cidade === city &&
             //   produto.bairro === neighborhood && 
