@@ -17,23 +17,28 @@ export default function Home() {
 
   function filteringData() {
     const filtering = data.filter(produto => (
-      (produto.cidade === city) && (produto.bairro === neighborhood) 
-      && (produto.quartos === bedrooms) && (produto.tamanho === size) 
-      && (produto.preco === price)
-      // (produto.preco === price) 
-      // && (produto.quartos === bedrooms) && 
-      // (produto.tamanho === size)
-      // && (produto.preco == price) 
+      (city === '' ? produto.cidade : (produto.cidade === city))
+      
+      && (neighborhood === '' ? produto.bairro : (produto.bairro === neighborhood)) 
+      && (bedrooms === '' ? produto.quartos : (produto.quartos === bedrooms)) 
+      && (size === '' ? produto.tamanho : produto.tamanho === size) 
+      && (price === '' ? produto.preco : produto.preco === price)
     ))
 
     setFilteredData(filtering)
-    console.log(filteredData, filtering)
   }
-// .filter(produto => produto.cidade === city &&
-//   produto.bairro === neighborhood && 
-//   produto.preco === price && 
-//   produto.quartos === bedrooms && 
-//   produto.tamanho === size) 
+
+  // function filteringData() {
+  //  const filtering = data.filter(produto => (
+  //     (produto.cidade === city) 
+  //     && (produto.bairro === neighborhood) 
+  //     && (produto.quartos === bedrooms) 
+  //     && (produto.tamanho === size) 
+  //     && (produto.preco === price)
+  //   ))
+
+  //   setFilteredData(filtering)
+  // }
 
   function handleSearch(e) {
     e.preventDefault()
