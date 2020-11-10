@@ -14,7 +14,7 @@ export default function Home() {
   const [bedrooms, setBedrooms] = useState('')
 
   // const [filtered, setFiltered] = useState('')
-
+  
 
   function handleSearch(e) {
     e.preventDefault()
@@ -28,13 +28,8 @@ export default function Home() {
     }
 
     console.log(filteredItems)
-    // const test = data.filter(produto => produto.cidade === 'Recife')
-    // setFiltered(test)
-    // console.log('hello')    
+    return filteredItems
   }
-  // const test = data.filter(produto => produto.cidade === 'Recife')
-  // setFiltered(test)
-  // console.log(test)
 
   return (
     <>
@@ -114,10 +109,18 @@ export default function Home() {
           </div>
         </form>
       </div>
+
       <div className='imoveis-container'>
         <ul>
-          {data.map(produto => (
-            <Link to={`/${produto.id}`}> 
+          {data
+            .filter(produto => produto.cidade === city)
+            // .filter(produto => produto.cidade === city &&
+            //   produto.bairro === neighborhood && 
+            //   produto.preco === price && 
+            //   produto.quartos === bedrooms && 
+            //   produto.tamanho === size) 
+            .map(produto => (
+            <Link to={`/imovel/${produto.id}`}> 
               <li key={produto.id}>
                 <div className="image-container">
                   <img src={produto.images} alt="po"/>
@@ -169,6 +172,7 @@ export default function Home() {
           ))}
         </ul>
       </div>
+
     </div>
     </>
   )
