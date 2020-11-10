@@ -12,10 +12,28 @@ export default function Home() {
   const [size, setSize] = useState('')
   const [price, setPrice] = useState('')
   const [bedrooms, setBedrooms] = useState('')
+
   const [filteredData, setFilteredData] = useState([...data])
 
-  // const [filtered, setFiltered] = useState('')
-  
+  function filteringData() {
+    const filtering = data.filter(produto => (
+      (produto.cidade === city) && (produto.bairro === neighborhood) 
+      && (produto.quartos === bedrooms) && (produto.tamanho === size) 
+      && (produto.preco === price)
+      // (produto.preco === price) 
+      // && (produto.quartos === bedrooms) && 
+      // (produto.tamanho === size)
+      // && (produto.preco == price) 
+    ))
+
+    setFilteredData(filtering)
+    console.log(filteredData, filtering)
+  }
+// .filter(produto => produto.cidade === city &&
+//   produto.bairro === neighborhood && 
+//   produto.preco === price && 
+//   produto.quartos === bedrooms && 
+//   produto.tamanho === size) 
 
   function handleSearch(e) {
     e.preventDefault()
@@ -28,8 +46,8 @@ export default function Home() {
       bedrooms
     }
 
+    filteringData()
     console.log(filteredItems)
-    return filteredItems
   }
 
   return (
@@ -37,7 +55,6 @@ export default function Home() {
     <Header />
     <div className='container'>
       <div className='filter-container'>
-        {/* <form onSubmit={console.log(filteredData)}> */}
         <form onSubmit={handleSearch}>
           <div>
             <label>Cidade: </label>
@@ -57,7 +74,7 @@ export default function Home() {
               value={neighborhood}
               onChange={e => setNeighborhood(e.target.value)}
               >
-              <option value=''>Não especificado</option>
+              <option >Não especificado</option>
               <option value='Aflitos'>Aflitos</option>
               <option value='Espinheiro'>Espinheiro</option>
             </select>
@@ -70,7 +87,7 @@ export default function Home() {
               onChange={e => setSize(e.target.value)}          
               >
               <option value=''>Não especificado</option>
-              <option value='70'>70- 120</option>
+              <option value='100'>70- 120</option>
               <option value='120'>120 - 150</option>
               <option value='150'>150 - 200</option>
             </select>
@@ -103,9 +120,8 @@ export default function Home() {
               <option value='4'>4</option>
             </select>
           </div>
-
           <div>
-            <button type='submit'onClick={console.log(filteredData)}>
+            <button type='submit'>
               Pesquisar <FiSearch  />
             </button>
           </div>
@@ -114,14 +130,8 @@ export default function Home() {
 
       <div className='imoveis-container'>
         <ul>
-          {filteredData
-            .filter(produto => produto.cidade === city)
-            // .filter(produto => produto.cidade === city &&
-            //   produto.bairro === neighborhood && 
-            //   produto.preco === price && 
-            //   produto.quartos === bedrooms && 
-            //   produto.tamanho === size) 
-            .map(produto => (
+          {filteredData.length > 0 ? 
+          filteredData.map(produto => (
             <Link to={`/imovel/${produto.id}`}> 
               <li key={produto.id}>
                 <div className="image-container">
@@ -159,19 +169,9 @@ export default function Home() {
                   R$ {produto.preco}
                 </div>
 
-                {/* <strong>Cidade: </strong>
-                <p>{produto.cidade}</p>
-                <strong>Bairro:</strong>
-                <p>{produto.bairro}</p>
-                <strong>Tamanho: </strong>
-                <p>{produto.tamanho}</p>
-                <strong>Preço: </strong>
-                <p>{produto.preco}</p>
-                <strong>Quartos: </strong>
-                <p>{produto.quartos}</p> */}
               </li>
             </Link>
-          ))}
+          )) : <h1>Opsss... Não temos um imovel com essas características, tente com outras</h1>}
         </ul>
       </div>
 
