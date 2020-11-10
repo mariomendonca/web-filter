@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FiSearch } from 'react-icons/fi'
+import { FiSearch, FiCamera, FiAnchor } from 'react-icons/fi'
 
 import Header from '../components/Header'
 import data from '../data/data'
@@ -119,7 +119,42 @@ export default function Home() {
           {data.map(produto => (
             <Link to={`/${produto.id}`}> 
               <li key={produto.id}>
-                <strong>Cidade: </strong>
+                <div className="image-container">
+                  <img src={produto.images} alt="po"/>
+                </div>
+                
+                <p className="info-container">
+                  {produto.tipo}
+                </p>
+
+                <p className="endereco-container">
+                  {produto.endereco}
+                </p>
+
+                <p className="regiao-container">
+                {produto.bairro}, {produto.cidade}
+                </p>
+
+                <div className="icons-container">
+                  <div className="first-icon">
+                    <FiAnchor />
+                    <span>
+                      {produto.tamanho} m²
+                    </span>
+                  </div>
+                  <div className="second-icon">
+                    <FiCamera />
+                    <span>
+                      {produto.quartos} quartos
+                    </span>
+                  </div>
+                </div>
+
+                <div className="price-container">
+                  R$ {produto.preco}
+                </div>
+
+                {/* <strong>Cidade: </strong>
                 <p>{produto.cidade}</p>
                 <strong>Bairro:</strong>
                 <p>{produto.bairro}</p>
@@ -128,7 +163,7 @@ export default function Home() {
                 <strong>Preço: </strong>
                 <p>{produto.preco}</p>
                 <strong>Quartos: </strong>
-                <p>{produto.quartos}</p>
+                <p>{produto.quartos}</p> */}
               </li>
             </Link>
           ))}

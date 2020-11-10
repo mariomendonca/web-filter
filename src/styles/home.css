@@ -19,7 +19,7 @@
 .filter-container form {
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: space-between;
 }
 
 .filter-container div {
@@ -40,10 +40,9 @@
 }
 
 .filter-container button {
-  outline: 0;
   border: unset;
 
-  height: 50px;
+  height: 35px;
   width: 200px;
 
   padding: 5px 25px;
@@ -81,6 +80,13 @@
   border-radius: 10px;
 }
 
+.filter-container select:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
 
 .imoveis-container {
   margin-top: 80px;
@@ -108,7 +114,7 @@
   
   margin: 20px 0;
   padding: 10px;
-  width: 250px;
+  width: 280px;
 
   transition: all .3s;
 }
@@ -120,3 +126,54 @@
 
   transform: scale(1.05);
 }
+
+.imoveis-container ul li .image-container {
+  width: 100%;
+  height: auto;
+}
+
+.imoveis-container ul li .image-container img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.imoveis-container ul li .info-container {
+  font-size: .9rem;
+  margin: .25rem 0;
+  color: #444;
+}
+
+.imoveis-container ul li .endereco-container {
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.imoveis-container ul li .regiao-container {
+  color: #444;
+  font-size: 1rem;
+}
+
+.imoveis-container ul li .icons-container {
+  display: flex;
+  margin-top: .5rem;
+}
+.imoveis-container ul li .icons-container div {
+  display: flex;
+  align-items: center;
+  margin-right: 1.25rem;
+  color: #444;
+}
+
+.imoveis-container ul li .icons-container div span {
+  margin-left: .25rem;
+  font-size: .9rem;
+}
+
+.imoveis-container ul li .price-container {
+  margin-top: .5rem;
+  color: #197719;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
