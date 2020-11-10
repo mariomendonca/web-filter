@@ -8,22 +8,79 @@
 }
 
 .filter-container {
-  width: 70%;
-  height: 90px;
+  width: 80%;
   border-radius: 20px;
-  border: 1px solid lightgray
-  /* background: #bfc0c0; */
+  border: 1px solid lightgray;
 
-  
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* margin: ; */
+  padding: 15px;
+
 }
 
-/* .filter-container {
+.filter-container form {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.filter-container div {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 20px 20px 0;
+}
+
+.filter-container div:last-child {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.filter-container div label {
+  margin-bottom: .5rem;
+}
+
+.filter-container button {
+  outline: 0;
+  border: unset;
+
+  height: 50px;
+  width: 200px;
+
+  padding: 5px 25px;
+  border-radius: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #2D3142;
+  color: #fff;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.filter-container button:hover {
+  transform: translateY(-.2rem);
   
-} */
+  -webkit-box-shadow: 3px 3px 17px -1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 3px 3px 17px -1px rgba(0,0,0,0.3);
+  box-shadow: 3px 3px 17px -1px rgba(0,0,0,0.3);
+
+  background-color: #3e4257;
+}
+
+.filter-container button:active {
+  transform: scale(.9);
+}
+
+.filter-container select {
+  padding: 10px;
+  /* margin: 5px 20px; */
+
+  border: 1px solid #bababa;
+  border-radius: 10px;
+}
+
 
 .imoveis-container {
   margin-top: 80px;
