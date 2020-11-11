@@ -1,0 +1,8 @@
+.produto-container {
+  margin: 65px 65px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+}
