@@ -1,21 +1,47 @@
-// import React from 'react'
-// import '../styles/header.css'
-// import {FiMenu} from 'react-icons/fi'
-// import { Link } from 'react-router-dom'
+import '../styles/header.css'
+import {FiMenu} from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
-// export default function Header() {
+export default function Header() {
 
-//   return (
-//     <div className='header'>
-//       <input type='checkbox' id='check'/>
-//       <label for='check' className='checkbtn'>
-//         <FiMenu size={30} color='#ffffff'/>
-//       </label>
-//       <label className='logo'>Odimar imóveis</label>
-//       <ul>
-//         <li><Link to='/'>Contato</Link></li>
-//         <li><a href='/'>Sobre mim</a></li>
-//       </ul>
-//     </div>
-//   )
-// }
+  function callMenu() {
+    var menu = document.querySelector('.btn')
+    var background = document.querySelector('.background')
+
+    var transform = window.getComputedStyle(menu).transform;
+
+    if(transform == 'matrix(1, 0, 0, 1, 0, 0)') {
+
+      menu.style.transform = 'scaleX(0)'
+      background.style.opacity = '1'
+      document.querySelector('html').style.overflow = 'hidden'
+      
+    } else {
+      menu.style.transform = 'scaleX(1)'
+      document.querySelector('html').style.overflow = 'scroll'  
+      background.style.opacity = '0'
+    }
+  }
+
+  return (
+    <header className='header'>
+      <div className="logo">
+        <a href="">Odimar imóveis</a>
+      </div>
+
+      <div className="btn">
+        <Link to='/'>Contato</Link>
+        <a href='/'>Sobre mim</a>
+      </div>
+
+      <div className="btn-responsivo">
+        <button onClick={callMenu}>
+          <FiMenu size={30} color='#ffffff'/>
+        </button>
+      </div>
+
+      <div className="background"></div>
+
+    </header>
+  )
+}

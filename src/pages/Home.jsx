@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FiSearch, FiCamera, FiAnchor } from 'react-icons/fi'
 
 // import Header from '../components/Header'
-import Header2 from '../components/Header2'
+import Header from '../components/Header'
 import data from '../data/data'
 import '../styles/home.css'
 
@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <>
-    <Header2 />
+    <Header />
 
     <div className='container'>
       <div className="image-background">
