@@ -4,7 +4,7 @@ import { FiArrowLeft } from 'react-icons/fi'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 
-import Header from '../components/Header'
+import Header2 from '../components/Header2'
 import data from '../data/data'
 import '../styles/product.css'
 
@@ -16,7 +16,7 @@ export default function Product() {
   return (
     <>
       {console.log(imovel, id)}
-      <Header />
+      <Header2 />
       <div className="produto-container">
         <div className="imovel-container">
           {imovel.map(produto => (
