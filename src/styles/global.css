@@ -7,6 +7,11 @@
   list-style: none;
 }
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body, input, button, textarea {
   font: 500 18px Poppins;
 }

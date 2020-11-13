@@ -1,5 +1,5 @@
 .container {
-  margin: 65px 65px 0;
+  /* margin-top: 65px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,13 +7,85 @@
   flex-direction: column;
 }
 
+.image-container {
+  background-image: url('../images/banner-rj.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500px;
+  width: 100%;
+
+  position: relative;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.background h1 {
+  margin-bottom: .25rem;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.background p {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.divisor-left {
+  position: absolute;
+  
+  height: 70px;
+  width: 50%;
+  top: 570px;
+  left: -5px;
+  background: #fff;
+
+  transform: rotate(5deg);
+}
+
+.divisor-right {
+  position: absolute;
+  
+  height: 70px;
+  width: 50%;
+  top: 570px;
+  right: -5px;
+  background: #fff;
+
+  transform: rotate(-5deg);
+}
+
 .filter-container {
-  width: 80%;
+  width: 85%;
+  max-width: 1300px;
+  height: 280px;
+
   border-radius: 20px;
   border: 1px solid lightgray;
+  background-color: rgba(255, 255, 255, 0.7);
+  
+  padding: 0 15px;
+  transition: .3s all;
+  
+  display: flex;
+  align-items: center;
+}
 
-  padding: 15px;
-
+.filter-container:hover {
+  -webkit-box-shadow: -1px 2px 13px -5px rgba(0,0,0,0.4);
+  -moz-box-shadow: -1px 2px 13px -5px rgba(0,0,0,0.4);
+  box-shadow: -1px 2px 13px -5px rgba(0,0,0,0.4);
 }
 
 .filter-container form {
@@ -95,7 +167,7 @@
   justify-content: center;
   align-items: center;
 
-  width: 100%;
+  max-width: 1300px;
 }
 
 .imoveis-container ul {
@@ -103,7 +175,7 @@
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .imoveis-container ul li {
@@ -112,9 +184,9 @@
   border-radius: 8px;
   position: relative;
   
-  margin: 20px 0;
+  margin: 20px 10px;
   padding: 10px;
-  width: 280px;
+  width: 305px;
 
   transition: all .3s;
 }
@@ -177,3 +249,12 @@
   font-size: 1.2rem;
 }
 
+@media (max-width: 950px) {
+  .filter-container div {
+    width: 100%;
+  }
+
+  .filter-container div:last-child {
+    align-items: center;
+  }
+}
