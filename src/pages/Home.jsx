@@ -18,23 +18,15 @@ export default function Home() {
 
   function filteringData() {
     const filtering = data.filter(produto => (
-      (produto.cidade === city) && (produto.bairro === neighborhood) 
-      && (produto.quartos === bedrooms) && (produto.tamanho === size) 
-      && (produto.preco === price)
-      // (produto.preco === price) 
-      // && (produto.quartos === bedrooms) && 
-      // (produto.tamanho === size)
-      // && (produto.preco == price) 
+      (city === '' ? produto.cidade : (produto.cidade === city))
+      && (neighborhood === '' ? produto.bairro : (produto.bairro === neighborhood)) 
+      && (bedrooms === '' ? produto.quartos : (produto.quartos === bedrooms)) 
+      && (size === '' ? produto.tamanho : produto.tamanho === size) 
+      && (price === '' ? produto.preco : produto.preco === price)
     ))
 
     setFilteredData(filtering)
-    console.log(filteredData, filtering)
   }
-// .filter(produto => produto.cidade === city &&
-//   produto.bairro === neighborhood && 
-//   produto.preco === price && 
-//   produto.quartos === bedrooms && 
-//   produto.tamanho === size) 
 
   function handleSearch(e) {
     e.preventDefault()
@@ -56,7 +48,7 @@ export default function Home() {
     <Header2 />
 
     <div className='container'>
-      <div className="image-container">
+      <div className="image-background">
         <div className="background">
           <h1>Encontre o imóvel ideal para você e sua família!</h1>
           <p>Cansado de imobiliárias e procura por algo mais rápido e simples? Prazer, <b>Mazinho!</b></p>
