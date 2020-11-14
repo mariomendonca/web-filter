@@ -1,0 +1,37 @@
+.floating-menu { 
+    display: none;
+}
+
+@media(max-width: 950px) {
+    .floating-menu {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 25px;
+
+        background-color: #ddd;
+        padding: 10px;
+
+        border-radius: 10px;
+
+        display: flex;
+        width: 60px;
+        overflow: hidden;
+    }
+
+    .floating-menu span {
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+    }
+
+    .floating-menu span:first-child {
+        display: flex;
+    }
+
+    .floating-menu span.icons-hidden {
+        /* display: none; */
+    }
+
+}

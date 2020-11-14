@@ -2,7 +2,12 @@ import React, { useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
 
 
+<<<<<<< HEAD
+=======
+import FloatingMenu from '../components/FloatingMenu'
+>>>>>>> b5d0c3b3724a4dfde1fc671b40cf13bf46e62f2f
 import Header from '../components/Header'
+
 import data from '../data/data'
 import Cards from '../components/Cards'
 import Pagination from '../components/Pagination'
@@ -63,7 +68,7 @@ export default function Home() {
       <div className="image-background">
         <div className="background">
           <h1>Encontre o imóvel ideal para você e sua família!</h1>
-          <p>Cansado de imobiliárias e procura por algo mais rápido e simples? Prazer, <b>Mazinho!</b></p>
+          <p>Cansado de imobiliárias e procura por algo mais rápido e simples? <span> Prazer, <b>LOGO!</b></span></p>
           <div className='filter-container'>
             <form onSubmit={handleSearch}>
               <div>
@@ -150,6 +155,7 @@ export default function Home() {
         <Pagination cardsPerPage={cardsPerPage} totalCards={filteredData.length} paginate={paginate}/>
 
     </div>
+    <FloatingMenu />
     </>
   )
 }
