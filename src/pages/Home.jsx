@@ -72,7 +72,7 @@ export default function Home() {
                   value={neighborhood}
                   onChange={e => setNeighborhood(e.target.value)}
                   >
-                  <option >Não especificado</option>
+                  <option value=''>Não especificado</option>
                   <option value='Aflitos'>Aflitos</option>
                   <option value='Espinheiro'>Espinheiro</option>
                 </select>
