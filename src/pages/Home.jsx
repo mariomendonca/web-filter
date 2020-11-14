@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FiSearch, FiCamera, FiAnchor } from 'react-icons/fi'
 
-// import Header from '../components/Header'
-import Header2 from '../components/Header2'
+import FloatingMenu from '../components/FloatingMenu'
+import Header from '../components/Header'
+
 import data from '../data/data'
 import '../styles/home.css'
 
@@ -45,13 +46,13 @@ export default function Home() {
 
   return (
     <>
-    <Header2 />
+    <Header />
 
     <div className='container'>
       <div className="image-background">
         <div className="background">
           <h1>Encontre o imóvel ideal para você e sua família!</h1>
-          <p>Cansado de imobiliárias e procura por algo mais rápido e simples? Prazer, <b>Mazinho!</b></p>
+          <p>Cansado de imobiliárias e procura por algo mais rápido e simples? <span> Prazer, <b>LOGO!</b></span></p>
           <div className='filter-container'>
             <form onSubmit={handleSearch}>
               <div>
@@ -180,6 +181,7 @@ export default function Home() {
       </div>
 
     </div>
+    <FloatingMenu />
     </>
   )
 }

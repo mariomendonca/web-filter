@@ -7,6 +7,10 @@
   list-style: none;
 }
 
+[only-responsive] {
+  display: none !important; 
+}
+
 html {
   overflow-x: hidden;
   width: 100%;
@@ -18,4 +22,10 @@ body, input, button, textarea {
 
 a {
   color: #000;
+}
+
+@media(max-width: 950px) {
+  [only-responsive] {
+    display: inherit;
+  }
 }
