@@ -20,6 +20,10 @@ body, input, button, textarea {
   font: 500 18px Poppins;
 }
 
+select {
+  font: 500 15px Poppins;
+}
+
 a {
   color: #000;
 }
