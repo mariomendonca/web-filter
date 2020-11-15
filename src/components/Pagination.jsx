@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
+import '../styles/pagination.css'
+
 export default function Pagination({ cardsPerPage, totalCards, paginate }) {
   const pageNumbers = []
 
