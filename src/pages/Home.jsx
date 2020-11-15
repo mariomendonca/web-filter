@@ -2,10 +2,7 @@ import React, { useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
 
 
-<<<<<<< HEAD
-=======
 import FloatingMenu from '../components/FloatingMenu'
->>>>>>> b5d0c3b3724a4dfde1fc671b40cf13bf46e62f2f
 import Header from '../components/Header'
 
 import data from '../data/data'

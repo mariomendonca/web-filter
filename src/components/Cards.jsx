@@ -8,8 +8,8 @@ export default function Cards({ cards }) {
       <ul>
         {cards.length > 0 ? 
         cards.map(produto => (
-          <Link to={`/imovel/${produto.id}`}> 
-            <li key={produto.id}>
+          <li key={produto.id}>
+            <Link to={`/imovel/${produto.id}`}> 
               <div className="image-container">
                 <img src={produto.images} alt="po"/>
               </div>
@@ -45,8 +45,8 @@ export default function Cards({ cards }) {
                 R$ {produto.preco}
               </div>
 
-            </li>
-          </Link>
+            </Link>
+          </li>
           )) : <h1>Opsss... Não temos um imovel com essas características, tente com outras</h1>}
         </ul>
     </div>
