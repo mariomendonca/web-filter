@@ -19,6 +19,9 @@ export default function FloatingMenu() {
       <span className="icons-hidden">
         <FaInstagram size="30px" />
       </span>
+      <span className="icons-hidden">
+        <FaInstagram size="30px" />
+      </span>
     </div>
   )
 }
