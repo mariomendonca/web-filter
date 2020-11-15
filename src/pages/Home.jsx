@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { FiSearch, FiCamera, FiAnchor } from 'react-icons/fi'
+import { FiSearch } from 'react-icons/fi'
 
+
+<<<<<<< HEAD
+=======
 import FloatingMenu from '../components/FloatingMenu'
+>>>>>>> b5d0c3b3724a4dfde1fc671b40cf13bf46e62f2f
 import Header from '../components/Header'
 
 import data from '../data/data'
+import Cards from '../components/Cards'
+import Pagination from '../components/Pagination'
+
 import '../styles/home.css'
 
 export default function Home() {
@@ -16,6 +22,9 @@ export default function Home() {
   const [bedrooms, setBedrooms] = useState('')
 
   const [filteredData, setFilteredData] = useState([...data])
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const [ cardsPerPage ] = useState(12)
 
   function filteringData() {
     const filtering = data.filter(produto => (
@@ -28,6 +37,13 @@ export default function Home() {
 
     setFilteredData(filtering)
   }
+
+  //pagination
+  const indexOfLastCard = currentPage * cardsPerPage
+  const indexOfFistCard = indexOfLastCard - cardsPerPage
+  const currentCards = filteredData.slice(indexOfFistCard, indexOfLastCard)
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
 
   function handleSearch(e) {
     e.preventDefault()
@@ -134,51 +150,9 @@ export default function Home() {
     </div>
 
       <div className='imoveis-container'>
-        <ul>
-          {filteredData.length > 0 ? 
-          filteredData.map(produto => (
-            <Link to={`/imovel/${produto.id}`}> 
-              <li key={produto.id}>
-                <div className="image-container">
-                  <img src={produto.images} alt="po"/>
-                </div>
-                
-                <p className="info-container">
-                  {produto.tipo}
-                </p>
-
-                <p className="endereco-container">
-                  {produto.endereco}
-                </p>
-
-                <p className="regiao-container">
-                {produto.bairro}, {produto.cidade}
-                </p>
-
-                <div className="icons-container">
-                  <div className="first-icon">
-                    <FiAnchor />
-                    <span>
-                      {produto.tamanho} m²
-                    </span>
-                  </div>
-                  <div className="second-icon">
-                    <FiCamera />
-                    <span>
-                      {produto.quartos} quartos
-                    </span>
-                  </div>
-                </div>
-
-                <div className="price-container">
-                  R$ {produto.preco}
-                </div>
-
-              </li>
-            </Link>
-          )) : <h1>Opsss... Não temos um imovel com essas características, tente com outras</h1>}
-        </ul>
+        <Cards cards={currentCards} />
       </div>
+        <Pagination cardsPerPage={cardsPerPage} totalCards={filteredData.length} paginate={paginate}/>
 
     </div>
     <FloatingMenu />
