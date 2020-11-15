@@ -2,10 +2,7 @@ import React, { useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
 
 
-<<<<<<< HEAD
-=======
 import FloatingMenu from '../components/FloatingMenu'
->>>>>>> b5d0c3b3724a4dfde1fc671b40cf13bf46e62f2f
 import Header from '../components/Header'
 
 import data from '../data/data'
@@ -24,7 +21,7 @@ export default function Home() {
   const [filteredData, setFilteredData] = useState([...data])
 
   const [currentPage, setCurrentPage] = useState(1)
-  const [ cardsPerPage ] = useState(12)
+  const [ cardsPerPage ] = useState(8)
 
   function filteringData() {
     const filtering = data.filter(produto => (

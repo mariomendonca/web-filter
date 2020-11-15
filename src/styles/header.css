@@ -1,16 +1,23 @@
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
     width: 100%;
     height: 90px;
     background: #2D3142;
 
     padding: 0 50px;
-}
-  
-.header {
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
 
+.header-spacer {
+    height: 90px;
+    display: block;
 }
 
 .header .logo a {
@@ -39,15 +46,20 @@
     border-radius: 8px;
 }
 
-.header .btn a:nth-child(1):hover svg {
-    color: #BF288D;
+.header .btn a svg{
+    transition: .2s all;
 }
 
 .header .btn a:nth-child(2):hover svg {
-    color: #04A906;
+    color: #BF288D;
 }
 
 .header .btn a:nth-child(3):hover svg {
+    color: #04A906;
+}
+
+.header .btn a:nth-child(4):hover svg,
+.header .btn a:nth-child(1):hover svg {
     color: #bbb;
 }
 
