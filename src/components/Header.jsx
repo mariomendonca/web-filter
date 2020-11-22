@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/header.css'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FaInstagram, FaWhatsapp, FaFacebookF, FaPhone } from 'react-icons/fa'
 
 export default function Header() {
@@ -9,7 +9,7 @@ export default function Header() {
     <>
       <header className='header'>
         <div className="logo">
-          <a href="">Logo</a>
+          <Link to="/">Logo</Link>
         </div>
 
         <div className="btn">
