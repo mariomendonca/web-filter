@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {  FiCamera, FiAnchor } from 'react-icons/fi'
+import {  FiCamera, FaRulerCombined } from 'react-icons/fi'
 
 export default function Cards({ cards }) {
   return (
@@ -28,7 +28,7 @@ export default function Cards({ cards }) {
 
               <div className="icons-container">
                 <div className="first-icon">
-                  <FiAnchor />
+                  <FaRulerCombined />
                   <span>
                     {produto.tamanho} m²
                   </span>
