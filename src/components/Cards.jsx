@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {  FiCamera, FaRulerCombined } from 'react-icons/fi'
+import {  FiCamera } from 'react-icons/fi'
+import { FaRulerCombined } from 'react-icons/fa'
 
 export default function Cards({ cards }) {
   return (
