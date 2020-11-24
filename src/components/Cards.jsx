@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {  FiCamera } from 'react-icons/fi'
-import { FaRulerCombined } from 'react-icons/fa'
+// import {  FiCamera } from 'react-icons/fi'
+import { FaRulerCombined, FaBed } from 'react-icons/fa'
 
 export default function Cards({ cards }) {
   return (
@@ -35,7 +35,7 @@ export default function Cards({ cards }) {
                   </span>
                 </div>
                 <div className="second-icon">
-                  <FiCamera />
+                  <FaBed />
                   <span>
                     {produto.quartos} quartos
                   </span>
