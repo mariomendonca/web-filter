@@ -23,8 +23,8 @@ export default function FloatingMenu() {
   }
 
   return (
-    <div className="floating-menu" ref={menu} >
-      <Link id="teste" to="#" onClick={handlerMenu}>
+    <div className="floating-menu" ref={menu}>
+      <Link to="#" onClick={handlerMenu}>
         <FiInfo size="40px"/>
       </Link>
       <a className="icons-hidden">

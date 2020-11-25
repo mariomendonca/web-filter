@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { FiSearch } from 'react-icons/fi'
-
+import { FaSearch, FaTrashRestoreAlt} from 'react-icons/fa'
 
 import FloatingMenu from '../components/FloatingMenu'
 import Header from '../components/Header'
@@ -23,6 +22,12 @@ export default function Home() {
   const [currentPage, setCurrentPage] = useState(1)
   const [ cardsPerPage ] = useState(8)
 
+  //pagination
+  const indexOfLastCard = currentPage * cardsPerPage
+  const indexOfFistCard = indexOfLastCard - cardsPerPage
+  const currentCards = filteredData.slice(indexOfFistCard, indexOfLastCard)
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
   function filteringData() {
     const filtering = data.filter(produto => (
       (city === '' ? produto.cidade : (produto.cidade === city))
@@ -35,32 +40,44 @@ export default function Home() {
     setFilteredData(filtering)
   }
 
-  //pagination
-  const indexOfLastCard = currentPage * cardsPerPage
-  const indexOfFistCard = indexOfLastCard - cardsPerPage
-  const currentCards = filteredData.slice(indexOfFistCard, indexOfLastCard)
-  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  function savingToLocalStorage() {
+    localStorage.setItem('city', city)
+    localStorage.setItem('neighborhood', neighborhood)
+    localStorage.setItem('bedrooms', bedrooms)
+    localStorage.setItem('size', size)
+    localStorage.setItem('price', price)
 
+    // document.getElementById('cidade').value = localStorage.city
+  }
+
+  function deletingLocalStorage() {
+    // localStorage.removeItem('city')
+    localStorage.clear()
+    // localStorage.removeItem()
+    // localStorage.removeItem()
+    // localStorage.removeItem()
+    // localStorage.removeItem()
+  }
 
   function handleSearch(e) {
     e.preventDefault()
-
-    const filteredItems = {
-      city,
-      neighborhood,
-      size,
-      price,
-      bedrooms
-    }
-
+    
     filteringData()
-    console.log(filteredItems)
+    savingToLocalStorage()
+    // const filteredItems = {
+    //   city,
+    //   neighborhood,
+    //   size,
+    //   price,
+    //   bedrooms
+    // }
+
   }
 
   return (
     <>
+    {console.log(filteredData)}
     <Header />
-
     <div className='container'>
       <div className="image-background">
         <div className="background">
@@ -71,8 +88,10 @@ export default function Home() {
               <div>
                 <label>Cidade: </label>
                 <select 
+                  id='cidade'
                   value={city}
                   onChange={e => setCity(e.target.value)}
+                  defaultValue={localStorage.city}
                   >
                   <option value=''>Não especificado</option>
                   <option value='Recife'>Recife</option>
@@ -133,8 +152,11 @@ export default function Home() {
                 </select>
               </div>
               <div>
+                <button type='reset' onClick={deletingLocalStorage}>
+                  Limpar <FaTrashRestoreAlt />
+                </button>
                 <button type='submit'>
-                  Pesquisar <FiSearch  />
+                  Pesquisar <FaSearch  />
                 </button>
               </div>
             </form>
@@ -149,8 +171,10 @@ export default function Home() {
       <div className='imoveis-container'>
         <Cards cards={currentCards} />
       </div>
-        <Pagination cardsPerPage={cardsPerPage} totalCards={filteredData.length} paginate={paginate}/>
-
+      {filteredData.length > 8 ? 
+      <Pagination cardsPerPage={cardsPerPage} totalCards={filteredData.length} paginate={paginate}/> 
+       : <div></div>} 
+      
     </div>
     <FloatingMenu />
     </>

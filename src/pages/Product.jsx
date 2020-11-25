@@ -1,14 +1,20 @@
 import React from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { FaChevronCircleLeft, FaChevronCircleRight, FaMapMarkerAlt, FaRulerCombined, FaBed, FaBath } from 'react-icons/fa'
-
-import { MapContainer, TileLayer } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import Leaflet from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
 import Header from '../components/Header'
 import data from '../data/data'
 import '../styles/product.css'
+import mapMarkerImg from '../images/map-marker-icon.svg'
 
+const mapIcon = Leaflet.icon({
+  iconUrl: mapMarkerImg,
+  iconSize: [40, 50], 
+  iconAnchor: [20, 50]
+})
 
 export default function Product() {
   const { id } = useParams()
@@ -41,7 +47,7 @@ export default function Product() {
               <div className="containerr">
                 <div className="left-container">
                   <div className="left">
-                    <h1>Texto do título rs</h1>
+                    <h1>Texto do título</h1>
 
                     <p className="address">
                       {produto.endereco} <FaMapMarkerAlt size="1.3rem" color="111" />
@@ -106,10 +112,14 @@ export default function Product() {
                     zoom={15}
                     style={{ width: '100%', height: '100% '}}
                   >
-                    <TileLayer 
-                    // url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                      url={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
-                    />
+                    <TileLayer  url={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}/>
+                    <Marker
+                      // key={produto.id}
+                      icon={mapIcon} 
+                      position={[-8.0456859, -34.8926374]}>
+
+                      </Marker>
+
                   </MapContainer>
                 </div>
               </div>
@@ -118,3 +128,5 @@ export default function Product() {
     </>
   )
 }
+
+// url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
