@@ -1,7 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { FaChevronCircleLeft, FaChevronCircleRight, FaMapMarkerAlt, FaRulerCombined, FaBed, FaBath } from 'react-icons/fa'
-
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import Leaflet from 'leaflet'
 import 'leaflet/dist/leaflet.css'
