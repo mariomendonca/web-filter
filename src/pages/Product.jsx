@@ -13,6 +13,7 @@ import '../styles/product.css'
 export default function Product() {
   const { id } = useParams()
   const imovel = data.filter(produto => produto.id == id)
+  console.log(imovel[0])
 
   return (
     <>
