@@ -96,7 +96,7 @@
 }
 
 .filter-container div {
-  width: 300px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,8 +104,10 @@
 }
 
 .filter-container div:last-child {
-  justify-content: flex-end;
+  flex-direction: row;
   align-items: flex-end;
+  justify-content: space-between;
+  /* width: 350px; */
 }
 
 .filter-container div label {
@@ -131,6 +133,11 @@
   transition: .5s;
 }
 
+.filter-container button:last-child {
+  width: 150px;
+  background-color: #e96b6b;
+}
+
 .filter-container button:hover {
   transform: translateY(-.2rem);
   
@@ -141,13 +148,18 @@
   background-color: #3e4257;
 }
 
+.filter-container button:hover:last-child {
+  background-color: #f53c3c;
+}
+
+
 .filter-container button:active {
   transform: scale(.9);
 }
 
 .filter-container select {
   padding: 10px;
-  /* margin: 5px 20px; */
+  width: 80%;
 
   border: 1px solid #bababa;
   border-radius: 10px;
@@ -250,13 +262,43 @@
   font-size: 1.2rem;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1250px) {
+  .filter-container div{
+    /* width: 300; */
+  }
+
+  .filter-container {
+    height: 320px;
+  }
+
+  .image-background {
+    height: 540px;
+  }
+
+  .divisor-left, .divisor-right {
+    top: 610px;
+  }
+}
+
+
+@media (max-width: 1050px) {
   .filter-container div {
     width: 100%;
   }
 
   .filter-container div:last-child {
     align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  
+  .filter-container select {
+    width: 100%;
+  }
+
+  .filter-container div button {
+    margin: 5px 0;
   }
 
   .image-background {
