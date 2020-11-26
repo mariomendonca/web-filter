@@ -46,17 +46,15 @@ export default function Home() {
     localStorage.setItem('bedrooms', bedrooms)
     localStorage.setItem('size', size)
     localStorage.setItem('price', price)
-
-    // document.getElementById('cidade').value = localStorage.city
   }
 
-  function deletingLocalStorage() {
-    // localStorage.removeItem('city')
+  function cleaningData() {
     localStorage.clear()
-    // localStorage.removeItem()
-    // localStorage.removeItem()
-    // localStorage.removeItem()
-    // localStorage.removeItem()
+    setCity('')
+    setNeighborhood('')
+    setBedrooms('')
+    setPrice('')
+    setSize('')
   }
 
   function handleSearch(e) {
@@ -64,19 +62,10 @@ export default function Home() {
     
     filteringData()
     savingToLocalStorage()
-    // const filteredItems = {
-    //   city,
-    //   neighborhood,
-    //   size,
-    //   price,
-    //   bedrooms
-    // }
-
   }
 
   return (
     <>
-    {console.log(filteredData)}
     <Header />
     <div className='container'>
       <div className="image-background">
@@ -152,7 +141,7 @@ export default function Home() {
                 </select>
               </div>
               <div>
-                <button type='reset' onClick={deletingLocalStorage}>
+                <button type='reset' onClick={cleaningData}>
                   Limpar <FaTrashRestoreAlt />
                 </button>
                 <button type='submit'>
