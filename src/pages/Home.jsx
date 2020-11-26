@@ -46,7 +46,10 @@ export default function Home() {
     localStorage.setItem('bedrooms', bedrooms)
     localStorage.setItem('size', size)
     localStorage.setItem('price', price)
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec4d6a132325a554bf7b894eec9f65ea57eb3d5b
   }
 
   function cleaningData() {
@@ -63,12 +66,14 @@ export default function Home() {
     
     filteringData()
     savingToLocalStorage()
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec4d6a132325a554bf7b894eec9f65ea57eb3d5b
   }
 
   return (
     <>
-    {console.log(filteredData)}
     <Header />
     <div className='container'>
       <div className="image-background">
@@ -144,6 +149,12 @@ export default function Home() {
                 </select>
               </div>
               <div>
+<<<<<<< HEAD
+=======
+                <button type='reset' onClick={cleaningData}>
+                  Limpar <FaTrashRestoreAlt />
+                </button>
+>>>>>>> ec4d6a132325a554bf7b894eec9f65ea57eb3d5b
                 <button type='submit'>
                   Pesquisar <FaSearch  />
                 </button>
