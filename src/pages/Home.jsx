@@ -11,11 +11,11 @@ import Pagination from '../components/Pagination'
 import '../styles/home.css'
 
 export default function Home() {
-  const [city, setCity] = useState('')
-  const [neighborhood, setNeighborhood] = useState('')
-  const [size, setSize] = useState('')
-  const [price, setPrice] = useState('')
-  const [bedrooms, setBedrooms] = useState('')
+  const [city, setCity] = useState(localStorage.city)
+  const [neighborhood, setNeighborhood] = useState(localStorage.neighborhood)
+  const [size, setSize] = useState(localStorage.size)
+  const [price, setPrice] = useState(localStorage.price)
+  const [bedrooms, setBedrooms] = useState(localStorage.bedrooms)
 
   const [filteredData, setFilteredData] = useState([...data])
 
@@ -65,8 +65,11 @@ export default function Home() {
 
   }
 
+  const lala = 'Recife'
+
   return (
     <>
+    {/* {console.log(localStorage.getItem('city'))} */}
     <Header />
     <div className='container'>
       <div className="image-background">
@@ -81,7 +84,7 @@ export default function Home() {
                   id='cidade'
                   value={city}
                   onChange={e => setCity(e.target.value)}
-                  defaultValue={localStorage.city}
+                  defaultValue={lala}
                   >
                   <option value=''>Não especificado</option>
                   <option value='Recife'>Recife</option>
