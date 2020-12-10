@@ -12,7 +12,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 500px;
+  height: 600px;
   width: 100%;
 
   position: relative;
@@ -47,7 +47,7 @@
   
   height: 70px;
   width: 50%;
-  top: 570px;
+  top: 670px;
   left: -5px;
   background: #fff;
 
@@ -59,7 +59,7 @@
   
   height: 70px;
   width: 50%;
-  top: 570px;
+  top: 670px;
   right: -5px;
   background: #fff;
 
@@ -69,7 +69,7 @@
 .filter-container {
   width: 85%;
   max-width: 1300px;
-  height: 280px;
+  height: 380px;
 
   border-radius: 20px;
   border: 1px solid lightgray;
@@ -92,7 +92,7 @@
 .filter-container form {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .filter-container div {
@@ -260,6 +260,23 @@
   color: #197719;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.not-found-container > *{
+  color: #2D3142;
+}
+
+.not-found-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found-container h5 {
+  width: 70%;
+  text-align: center;
+  font-size: 1.7rem;
+  margin: 25px 45px 25px 0;
 }
 
 @media (max-width: 1250px) {

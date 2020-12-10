@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 // import {  FiCamera } from 'react-icons/fi'
 import { FaRulerCombined, FaBed } from 'react-icons/fa'
+import { FiFrown } from 'react-icons/fi'
 
 export default function Cards({ cards }) {
   return (
@@ -48,7 +49,15 @@ export default function Cards({ cards }) {
 
             </Link>
           </li>
-          )) : <h1>Opsss... Não temos um imovel com essas características, tente com outras</h1>}
+          )) :
+            <div class="not-found-container">
+              <h5>
+                Opsss... Não temos um ímovel com essas características, talvez o problema esteja nos filtros
+              </h5>
+              <FiFrown size="2.8rem" />
+              
+            </div> 
+          }
         </ul>
     </div>
   )

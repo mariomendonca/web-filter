@@ -116,8 +116,8 @@ export default function Product() {
                     <Marker
                       // key={produto.id}
                       icon={mapIcon} 
-                      // position={[-8.0456859, -34.8926374]}>
-                      position={[-22.9229754,-43.3703663]}>
+                      position={[-8.0456859, -34.8926374]}>
+                      {/* position={[-22.9229754,-43.3703663]}> */}
 
                       </Marker>
 
